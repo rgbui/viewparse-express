@@ -1,0 +1,31 @@
+{
+  "name": "viewparse-express",
+  "version": "1.0.9",
+  "description": "viewparse.com product nodejs web site framework",
+  "main": "dist/index.js",
+  "scripts": {},
+  "keywords": [
+    "nodejs",
+    "express",
+    "viewparse-express",
+    "web site framework",
+    "viewparse",
+    "viewparse.com"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rgbui/viewparse-express"
+  },
+  "homepage": "https://viewparse.com/",
+  "author": "viewparse",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^13.1.2",
+    "fs-sync": "^1.0.6"
+  },
+  "files": [
+    "readme.md",
+    "LICENSE",
+    "dist/"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "declaration": true,
+        "sourceMap": false,
+        "outDir": "../dist",
+        "alwaysStrict": false,
+        "types": [
+            // add node as an option
+            "node"
+        ],
+        // typeRoots option has been previously configured
+        // "typeRoots": [
+        //     // add path to @types
+        //     "../App/node_modules/@types"
+        // ]
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
