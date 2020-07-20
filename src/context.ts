@@ -66,10 +66,10 @@ export class HttpContext {
                         }
                         else {
                             var v = value;
-                            if (prop.type == 'int') {
+                            if (type == 'int') {
                                 v = parseInt(value);
                             }
-                            else if (prop.type == 'number' || prop.type == 'double') {
+                            else if (type == 'number' || type == 'double') {
                                 v = parseFloat(value);
                             }
                             if (isNaN(v)) v = prop.value;
@@ -122,12 +122,12 @@ export class HttpContext {
 
                             }
                         }
-                        else if (prop.type == 'array' && Array.isArray(prop.value)) return args.push(prop.value)
-                        else if (prop.type == 'object' && typeof prop.value == 'object') return args.push(prop.value)
+                        else if (type == 'array' && Array.isArray(prop.value)) return args.push(prop.value)
+                        else if (type == 'object' && typeof prop.value == 'object') return args.push(prop.value)
                         break;
                     default:
                         if (typeof value != 'undefined') {
-                            return args.push({ __ve_type: prop.type, value });
+                            return args.push({ __ve_type: type, value });
                         }
                         args.push(undefined);
                         break;
@@ -249,6 +249,15 @@ export class HttpContext {
                 this.res.status(404).send('not found page ...');
                 break;
         }
+    }
+    handleRoleSession() {
+        var role = this.req.session[this.cfg.role_session_key];
+        var rs = this.cfg.roles || [];
+        if (!role) {
+            var sr = rs.find(x => x.type == 'default');
+            if (sr) role = sr.text;
+        }
+        this.res.json({ role });
     }
     callback(data) {
         if (this.res.headersSent == true) return;

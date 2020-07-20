@@ -45,6 +45,10 @@ export function use(router, routes: Route[], options: {
         var context = new HttpContext({ req, res }, cfg);
         context.handleDefaultPage();
     });
+    router.get('/__session/role', (req, res, next) => {
+        var context = new HttpContext({ req, res }, cfg);
+        context.handleRoleSession();
+    });
 }
 export function config(options: {
     upload_dir: string,

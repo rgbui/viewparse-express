@@ -41,6 +41,10 @@ function use(router, routes, options) {
         var context = new context_1.HttpContext({ req, res }, exports.cfg);
         context.handleDefaultPage();
     });
+    router.get('/__session/role', (req, res, next) => {
+        var context = new context_1.HttpContext({ req, res }, exports.cfg);
+        context.handleRoleSession();
+    });
 }
 exports.use = use;
 function config(options) {

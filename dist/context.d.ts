@@ -25,6 +25,7 @@ export declare class HttpContext {
     private handleView;
     private handleService;
     handleException(handleType: HandleExceptionType, ...args: any[]): any;
+    handleRoleSession(): void;
     callback(data: any): void;
     error(error: string | Error): void;
     next: () => void;
